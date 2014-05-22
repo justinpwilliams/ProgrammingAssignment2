@@ -3,9 +3,9 @@
 
 ## Write a short comment describing this function
 
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix(), ...) {
         s <- NULL
-        set <- function(y) {
+        set <- function(y, ...) {
                 x <<- y
                 s <<- NULL
         }
@@ -27,7 +27,6 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## 'x' is the output of the special vector above
-
 cacheSolve <- function(x, ...) {
         ## This loads the matix from the 
         s <- x$getSol()
