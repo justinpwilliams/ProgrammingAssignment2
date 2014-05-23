@@ -1,10 +1,19 @@
-## Put comments here that give an overall description of what your
-## functions do
+## These two functions allow the user to store a matrix using 'makeCacheMatrix',
+## solve for the inverse using 'cacheSolve', and store that result in the 
+## special object created by 'makeCacheMatrix'. If an attempt to solve the same
+## matrix is made, the cached result will be returned rather than calculated 
+## again.
 
-## Write a short comment describing this function
+## 'makeCacheMatrix' creates a special object which is a list of functions, one 
+## of which returns the original matrix given. The other functions are used to
+## store and retrieve the cached inverse of a matrix.
 
 makeCacheMatrix <- function(x = matrix(), ...) {
+        ## intializing the s variable
         s <- NULL
+        
+        ## 'set' exists to change the matrix held in the item without creating 
+        ## a new cache matrix.
         set <- function(y, ...) {
                 x <<- y
                 s <<- NULL
